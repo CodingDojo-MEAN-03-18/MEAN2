@@ -5,4 +5,8 @@ export class Book {
   year: number;
   pages: number;
   publisher: string;
+
+  constructor() {
+    this.id = Math.round(Math.random() * 1000);
+  }
 }
