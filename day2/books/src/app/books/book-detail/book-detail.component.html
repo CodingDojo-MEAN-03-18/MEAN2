@@ -1,12 +1,11 @@
-<section *ngIf='book'>
-  <fieldset class="scheduler-border">
-    <legend class="scheduler-border">Selected Book</legend>
-
+<fieldset *ngIf='book' class="border">
+  <legend class="border">Selected Book</legend>
+  <section>
     <p>ID: {{ book?.id }}</p>
     <p>Title: {{ book?.title }}</p>
     <p>Author: {{ book?.author }}</p>
     <p>Year: {{ book?.year }}</p>
     <p>Pages: {{ book?.pages }}</p>
     <p>Publisher: {{ book?.publisher }}</p>
-  </fieldset>
-</section>
+  </section>
+</fieldset>
