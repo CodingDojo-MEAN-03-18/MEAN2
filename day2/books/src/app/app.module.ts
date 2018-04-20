@@ -7,8 +7,18 @@ import { BookListComponent } from './books/book-list/book-list.component';
 import { BookNewComponent } from './books/book-new/book-new.component';
 import { BookDetailComponent } from './books/book-detail/book-detail.component';
 
+import { TitleizePipe } from './titleize.pipe';
+
+TitleizePipe.skipWords = ['of'];
+
 @NgModule({
-  declarations: [AppComponent, BookListComponent, BookNewComponent, BookDetailComponent],
+  declarations: [
+    AppComponent,
+    BookListComponent,
+    BookNewComponent,
+    BookDetailComponent,
+    TitleizePipe
+  ],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]
