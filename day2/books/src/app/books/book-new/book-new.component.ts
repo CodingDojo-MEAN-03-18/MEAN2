@@ -3,6 +3,8 @@ import { NgForm } from '@angular/forms';
 
 import { Book } from '../../book';
 
+import { BookService } from '../../services/book.service';
+
 @Component({
   selector: 'app-book-new',
   templateUrl: './book-new.component.html',
@@ -13,7 +15,7 @@ export class BookNewComponent implements OnInit {
 
   @Output() createBook = new EventEmitter<Book>();
 
-  constructor() {}
+  constructor(private bookService: BookService) {}
 
   ngOnInit() {}
 
@@ -21,15 +23,16 @@ export class BookNewComponent implements OnInit {
     event.preventDefault();
 
     const { value, valid } = form;
-
     console.log('submitting form ', form.value);
 
+    this.bookService.createBook(this.book).subscribe(book => {
+      this.createBook.emit(book);
+      this.book = new Book();
+
+      form.reset();
+    });
+
     // this.books.push(this.book);
-    this.createBook.emit(this.book);
-
-    this.book = new Book();
-
-    form.reset();
 
     // console.log('books', this.books);
   }
