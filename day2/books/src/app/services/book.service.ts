@@ -32,4 +32,8 @@ export class BookService {
   deleteBook(id: number): Observable<Book> {
     return this.http.delete<Book>(`${this.base}/${id}`);
   }
+
+  getBook(id: string): Observable<Book> {
+    return this.http.get<Book>(`${this.base}/${id}`);
+  }
 }
