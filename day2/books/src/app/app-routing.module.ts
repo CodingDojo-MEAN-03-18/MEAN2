@@ -13,6 +13,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    // /books
     path: 'books',
     children: [
       {
