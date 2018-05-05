@@ -14,6 +14,7 @@
         </tr>
       </thead>
 
+<<<<<<< HEAD
       <tbody>
         <tr *ngFor='let book of books' (click)='selectBook(book)'>
           <td>{{ book.id }}</td>
@@ -26,5 +27,20 @@
     </table>
   </section>
 </fieldset>
+=======
+    <tbody>
+      <tr *ngFor='let book of books' (click)='selectBook(book)'>
+        <td>{{ book.id }}</td>
+        <td>{{ book.title | titleize:false }}</td>
+        <td>{{ book.year }}</td>
+        <td>{{ book.author }}</td>
+        <td (click)='onClick($event)'>
+          <button class='btn btn-danger' (click)='onDelete(book.id)'>Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+>>>>>>> 85df8d64af1db4639b5b147589d151ff8b3b58f7
 
 <app-book-detail [book]='selectedBook'></app-book-detail>

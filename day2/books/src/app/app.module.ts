@@ -1,4 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
+
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
@@ -11,6 +13,8 @@ import { TitleizePipe } from './titleize.pipe';
 
 TitleizePipe.skipWords = ['of'];
 
+import { BookService } from './services/book.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,8 +23,8 @@ TitleizePipe.skipWords = ['of'];
     BookDetailComponent,
     TitleizePipe
   ],
-  imports: [BrowserModule, FormsModule],
-  providers: [],
+  imports: [BrowserModule, FormsModule, HttpClientModule],
+  providers: [BookService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
